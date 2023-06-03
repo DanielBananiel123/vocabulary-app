@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starting Screen</title>
+
+    <link rel="stylesheet" href="/styles/homestyle.css" >
+    
+</head>
+<body>   
+    <div class="ymainblock">
+        <a href="/sites/vocabulary-sets.html" class="ylink">Create New Vocabulary Set</a>
+        <input type="file" id="real-file" hidden="hidden">
+        <button class="ybutton" id="custom-file" accept=".csv">Import Vocabulary Set</button>
+        <span id="file-text"></span>
+    </div>
+    <script src="/scripts/uploadCSV.js"></script>
+    <script>
+        getCSV();
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@1,1000&display=swap');
+
+
+
+.ymainblock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ylink {
+    background-color: #0844C4;
+    border-radius: 5px;
+    width: 15em;
+    height: 1.5em;
+    box-shadow: 0.1em 0.1em 0.3em black;
+
+    color: white;
+    font-size: 2.25em;
+    text-decoration-line: none;
+    text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
+
+
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+
+    margin: 1rem;
+
+    transition-duration:0.4s;
+}
+
+.ylink:hover {
+    width: 16em;
+    height: 1.6em;
+    font-size: 2.475em;
+    padding-top: 0.92em;
+    padding-bottom: 0.92em;
+}
+
+.ybutton {
+    background-color: #0844C4;
+    border-radius: 5px;
+    width: 15em;
+    height: 2em;
+    box-shadow: 0.1em 0.1em 0.3em black;
+
+    color: white;
+    font-size: 2.25em;
+    text-decoration-line: none;
+    text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
+
+    border:0;
+
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+
+    margin: 1rem;
+
+    transition-duration:0.4s;
+}
+
+.ybutton:hover {
+    width: 16em;
+    height: 2.1em;
+    font-size: 2.475em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+}
+
