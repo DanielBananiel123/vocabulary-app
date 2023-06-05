@@ -1,7 +1,7 @@
 
 .icards {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -22,11 +22,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 #names {
-    display: inline;
     font-size: 1rem;
+
 }
 #largehead {
-    
     margin-right: 0;
     font-size: 2rem;
 }
@@ -69,12 +68,68 @@ body {
     font-size: 1.76rem;
 }
 .ibuttons {
-    margin: auto;
+    display: flex;
+    justify-content: center;
     margin-top: 1rem;
-    width: fit-content;
+    height: 5rem;
 
 }
 #translationBox {
-    margin-right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+#vocabBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+#definitionBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+.iheadline {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    height: 2.3rem;
+    
+
+}
+
+#separator {
+    display: flex;
+    height: 2rem;
+}
+.iscore {
+    font-size: 2rem;
+}
+#separator2 {
+    display: flex;
+    border-top: 1px solid black;
+    height: 1rem;
+    width: 23.5rem;
+
+}
+#bottom {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
+}
+.iscore {
+    display: flex;
+    gap: 1rem;
+}
+.inumber {
+    display: flex;
+    gap: 1rem;
+}
+.itimer {
+    display: flex;
+    gap: 1rem;
 }
 

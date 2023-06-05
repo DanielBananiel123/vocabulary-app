@@ -5,35 +5,76 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
     <div class="iheadline">
         <span id="largehead">Vocabulary-App</span>
         <span id="names">by Danyyil & Daniel</span> 
     </div>
-    <div class="iscore">
-        Your score is:
+    <div id="separator2">
+
+    </div>
+    <div class="iscore" >
+        Your score is: <div id="currentscore">0</div>
+    </div>
+    <div id="separator">
+
     </div>
         <div class="icards">
-            <div id="vocabBox" class="icard">
-
+            <div id="vocabBox" class="icard" onclick="revealVocab()">
+                Reveal
             </div>
-            <div id="definitionBox" class="icard">
-
+            <div id="definitionBox" class="icard" onclick="revealDefinition()">
+                Reveal
             </div>
-            <div id="translationBox" class="icard">
-            
+            <div id="translationBox" class="icard" onclick="revealTranslation()">
+                Reveal
             </div>
         </div>
     <div class="ibuttons">
-        <button id="right" onclick="right()">Right</button>
-        <button id="wrong" onclick="wrong()">Wrong</button>
+        <button id="right">Right</button>
+        <button id="wrong">Wrong</button>
     </div>
-    <div class="inumber">Word Nr. </div>
-    <div class="itimer">Time: </div>
+    <div id="bottom">
+        <div class="inumber">Word Nr. 
+            <div id="currentWordNumber">1</div>
+        </div>
+        <div class="itimer">Time: 
+            <div id="currentTime">0</div>
+        </div>
+    </div>
+
 </body>
 </html>
 <script>
+    let score = 0
+    let right = document.querySelector("#right")
+    let vocabNumber = 1
+    let timer = 0
+    function revealVocab() {
 
+    }
+    function revealDefinition() {
+        
+    }
+    function revealTranslation() {
+        
+    }
+    right.addEventListener('click', function() {
+        score += 10
+        document.querySelector("#currentscore").innerHTML = score
+        vocabNumber += 1
+        document.querySelector("#currentWordNumber").innerHTML = vocabNumber
+    })
+    wrong.addEventListener('click', function() {
+        score -= 10
+        document.querySelector("#currentscore").innerHTML = score
+        vocabNumber += 1
+        document.querySelector("#currentWordNumber").innerHTML = vocabNumber
+    })
+    setInterval(() => {
+        timer++
+        document.querySelector("#currentTime").innerHTML = timer
+    }, 1000);
 </script>
