@@ -8,46 +8,132 @@
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
-    <div class="iheadline">
-        <span id="largehead">Vocabulary-App</span>
-        <span id="names">by Danyyil & Daniel</span> 
-    </div>
-    <div id="separator2">
-
-    </div>
-    <div class="iscore" >
-        Your score is: <div id="currentscore">0</div>
-    </div>
-    <div id="separator">
-
-    </div>
-        <div class="icards">
-            <div id="vocabBox" class="icard" onclick="revealVocab()">
-                Reveal
-            </div>
-            <div id="definitionBox" class="icard" onclick="revealDefinition()">
-                Reveal
-            </div>
-            <div id="translationBox" class="icard" onclick="revealTranslation()">
-                Reveal
-            </div>
-        </div>
-    <div class="ibuttons">
-        <button id="right">Right</button>
-        <button id="wrong">Wrong</button>
-    </div>
-    <div id="bottom">
-        <div class="inumber">Word Nr. 
-            <div id="currentWordNumber">1</div>
-        </div>
-        <div class="itimer">Time: 
-            <div id="currentTime">0</div>
-        </div>
-    </div>
-
 </body>
 </html>
 <script>
+    class ElementBuilder {
+        constructor(ty) {
+            this._el = document.createElement(ty);
+        }
+        with_class(...classes) {
+            this._el.classList.add(...classes);
+            return this;
+        }
+        with_children(...children) {
+            this._el.append(...children);
+            return this;
+        }
+        with_id(id) {
+            this._el.id = id;
+            return this;
+        }
+        with_inner_HTML(html) {
+            this._el.innerHTML = html;
+            return this;
+        }
+        with_onclick(fn) {
+            this._el.addEventListener("click", fn);
+            return this;
+        }
+        insert() {
+            document.body.append(this._el);
+            return this;
+        }
+        finish() {
+            return this._el;
+        }
+    }
+    el("div")
+        .with_class("iheadline")
+        .with_inner_HTML(`<span id="largehead">Vocabulary-App</span>
+        <span id="names">by Danyyil & Daniel</span>`)
+        .insert()
+
+    el("div")
+         .with_id("separator2")
+         .insert()
+    el("div")
+         .with_class("iscore")
+         .with_inner_HTML("Your score is:")
+   
+         .with_children(
+             el("div")
+             .with_id("currentscore")
+             .with_inner_HTML("0")
+             .finish()
+             )
+         .insert()
+    el("div")
+        .with_id("separator")
+        .insert()
+
+    el("div")
+        .with_children(
+            el("div")
+                .with_class("icards")
+                .with_children(
+                    el("div")
+                        .with_id("vocabBox")
+                        .with_class("icard")
+                        .with_onclick(revealVocab)
+                        .with_inner_HTML("Reveal")
+                        .finish(),
+                    el("div")
+                        .with_id("definitionBox")
+                        .with_class("icard")
+                        .with_onclick(revealDefinition)
+                        .with_inner_HTML("Reveal")
+                        .finish(),
+                    el("div")
+                        .with_id("translationBox")
+                        .with_class("icard")
+                        .with_onclick(revealTranslation)
+                        .with_inner_HTML("Reveal")
+                        .finish()
+                )
+                .finish()
+        )
+        .insert()
+    el("div")
+        .with_class("ibuttons")
+        .insert()
+        .with_children(
+            el("button")
+                .with_id("right")
+                .with_inner_HTML("Right")
+                .finish(),
+            el("button")
+                .with_id("wrong")
+                .with_inner_HTML("Wrong")
+                .finish()
+
+        )
+    el("div")
+        .with_id("bottom")
+        .with_children(
+            el("div")
+                .with_class("inumber")
+                .with_inner_HTML("Word Nr.")
+                .with_children(
+                    el("div")
+                        .with_id("currentWordNumber")
+                        .with_inner_HTML("1")
+                        .finish()
+                )
+                .finish(),
+                el("div")
+                .with_class("itimer")
+                .with_inner_HTML("Time:")
+                .with_children(
+                    el("div")
+                        .with_id("currentTime")
+                        .with_inner_HTML("0")
+                        .finish()
+                )
+                .finish()
+        
+        )
+        .insert()
     let score = 0
     let right = document.querySelector("#right")
     let vocabNumber = 1
@@ -77,4 +163,13 @@
         timer++
         document.querySelector("#currentTime").innerHTML = timer
     }, 1000);
+    function el(ty) {
+        return new ElementBuilder(ty);
+    }
+
+
+
+    
+
+
 </script>
