@@ -7,17 +7,14 @@
     <title>Starting Screen</title>
 
     <link rel="stylesheet" href="/styles/homestyle.css" >
+    <script src="../scripts/createElement.js"></script>
+    <script src="../scripts/startPage.js"></script>
+    <script src="../scripts/uploadCSV.js"></script>
     
 </head>
-<body>   
-    <div class="ymainblock">
-        <a href="/sites/vocabulary-sets.html" class="ylink">Create New Vocabulary Set</a>
-        <input type="file" id="real-file" hidden="hidden">
-        <button class="ybutton" id="custom-file" accept=".csv">Import Vocabulary Set</button>
-        <span id="file-text"></span>
-    </div>
-    <script src="/scripts/uploadCSV.js"></script>
+<body id="body">       
     <script>
+        startPage();
         getCSV();
     </script>
 </body>
