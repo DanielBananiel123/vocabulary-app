@@ -1,4 +1,4 @@
-    function getCSV() {
+function getCSV() {
         //Get the 3 ELements from HTML with their corresponding IDsja
         const realFileButton = document.getElementById("real-file");
         const customFileButton = document.getElementById("custom-file");
@@ -11,6 +11,9 @@
         realFileButton.addEventListener("change",
             (event) =>
             {
+                const fileList = realFileButton.files; 
+                console.log(fileList.length);
+
                 if (realFileButton.value != "") {
                     console.log("CSV uploaded");
 
@@ -36,6 +39,36 @@
                         .finish()
 
                     const removeButton = document.getElementById("removeButton")
+
+                    //Creating PlayButton Element
+                    createElement("button")
+                    .with_inner_html("Play Vocabulary Quiz")
+                    .with_class("commonButton")
+                    .with_styles("background-color: #0d890b;")
+                    .with_id("playButton")
+                    .insert("mainDIV")
+                    .finish()
+
+                    const playButton = document.getElementById("playButton")
+
+                    //Creating EditingButton Element
+                    createElement("button")
+                    .with_inner_html("Edit Vocabulary Set")
+                    .with_class("commonButton")
+                    .with_styles("background-color: #0844C4;")
+                    .with_id("editButton")
+                    .insert("mainDIV")
+                    .finish()
+
+                    // const editButton = document.getElementById("editButton")
+                    // editButton.addEventListener = ("click", () => {
+                    //     console.log("mainDiv removed");
+                    //     mainDiv = document.getElementById("mainDIV");
+                    //     mainDiv.remove(); 
+                    // }, 
+                    // console.log("eventListenerAdded")
+                    // )
+
                     
                     //Creating Eventlistner which removes all Buttons on Remove
                     removeButton.addEventListener("click", () =>
@@ -48,21 +81,14 @@
 
                             playButton.remove();
                             removeButton.remove();
+                            editButton.remove();
 
 
 
                         }
                     )
 
-                    //Creating PlayButton Element
-                        createElement("button")
-                            .with_inner_html("Play Vocabulary Quiz")
-                            .with_class("commonButton")
-                            .with_styles("background-color: #0d890b;")
-                            .with_id("playButton")
-                            .insert("mainDIV")
-                            .finish()
-
+                    
                     customFileButton.removeEventListener('click', function() {
                         console.log('Custom file clicked');
                         
@@ -73,5 +99,5 @@
             
         )
 
-    }
+}
     
